@@ -1,0 +1,8 @@
+# to create custom network 
+  docker network create -d bridge my-bridge-network
+
+#To connect two containers using same network
+  docker run -dit --name nginx-server --network my-bridge-network nginx:latest
+  docker run -dit --name alpine-server --network my-bridge-network alpine
+# check connectivity
+  docker exec -it alpine-server curl nginx-server
