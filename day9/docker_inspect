@@ -1,0 +1,3 @@
+# command to check ip address of running container.
+docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' <name or id of container>
+docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' mysql-server
